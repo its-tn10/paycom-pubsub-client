@@ -9,8 +9,6 @@ class MessageHandler:
             decoded_line = await self.decode_json(line)
             function_name = decoded_line.pop('action').lower()
 
-            print('\n\n', decoded_line, function_name, '\n\n')
-
             module_functions = [curr_name for curr_name, func in general.__dict__.items() \
                                 if hasattr(func, '__call__')]
 

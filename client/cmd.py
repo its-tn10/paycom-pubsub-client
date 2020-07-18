@@ -1,6 +1,7 @@
 
 from client.commands import general
 
+from aioconsole import ainput
 import asyncio
 
 class CMD:
@@ -19,7 +20,7 @@ class CMD:
     async def listen_to_cmds(self):
         try:
             while True:
-                cmd = input()
+                cmd = await ainput()
                 if cmd[0:1] == '/':
                     parsed_cmd = cmd[1:].strip().lower()
 
